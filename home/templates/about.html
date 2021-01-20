@@ -1,0 +1,30 @@
+{% extends 'homebase.html' %}
+{% load static %}
+{% block title %}ABOUT US {% endblock %}
+{% block keywords %}{{ setting.keywords }}{% endblock %}
+{% block description %}{{ setting.description }}{% endblock %}
+
+{% block sidebar %}{% include 'sidebar.html'%}{% endblock %}
+{% block body %}
+<div id="breadcumb">
+    <div class="container">
+        <ul class="breadcrumb">
+            <li><a href="/">Home</a></li>
+            <li class="active">About us</li>
+        </ul>
+    </div>
+</div>
+<div class="section">
+    <div class="container">
+        <div class="row">
+            {% for rs in setting %}
+                {{ rs.aboutus|safe }}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}
+{% block footer  %}{% include 'footer.html' %}{% endblock %}
